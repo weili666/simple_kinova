@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: move_group
+    relative_path: urdf/jaco.xacro
+  SRDF:
+    relative_path: config/jaco.srdf
+  CONFIG:
+    generated_timestamp: 1492073228

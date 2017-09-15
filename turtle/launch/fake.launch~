@@ -1,0 +1,6 @@
+<launch>
+<group ns="fake_laser">
+	<node pkg="turtle" type="fake_laser_node" name="fake_laser_node" output="screen" />
+</group>
+	<node pkg="turtle" type="fake_encoder_node" name="fake_encoder_node" output="screen" />
+</launch>

@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<robot xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+	xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+	xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+	xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+	xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+	xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+	xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+	xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+	xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+	xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+	xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics"
+	xmlns:xacro="http://ros.org/wiki/xacro" name="jaco">
+
+	<xacro:include filename="$(find jaco_description)/urdf/jaco_arm.urdf.xacro" />
+	<xacro:include filename="$(find jaco_dynamic_ident)/urdf/table.xacro" />
+
+	<link name="root">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<box size = "0 0 0" />
+			</geometry>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<box size = "0 0 0" />
+			</geometry>
+		</collision>
+	</link>
+    
+	<joint name="table_joint" type="fixed">
+	  <parent link="root" />
+	  <child link="table_top_link" />
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	</joint>
+
+	  <property name="table_height" value="0.8" />
+	  <property name="table_width" value="1.0" />
+	  <property name="table_depth" value="0.55" />
+	  <property name="leg_radius" value="0.02" />
+	  <property name="table_x" value="0.98" />
+	  <property name="table_y" value="0.0" />
+	  <property name="table_z" value="0.0" />
+	  <property name="wall_thick" value="0.031" />
+	  <property name="wall_height" value="0.44" />
+	  <property name="table_top_thickness" value="0.8"/>
+	
+
+	<xacro:jaco_arm parent="root" xyz="${table_x-table_width/2+0.08} ${table_y+table_depth/2-0.11} ${table_z+table_height}" rpy="0 0 1.57" /> 
+
+	<joint name="wall_joint" type="fixed">
+		<parent link="root" />
+		<child link="wall_link" />
+        <origin xyz="0.95 -${table_depth/2+wall_thick/2} ${wall_height/2+table_height/2}" rpy="0 0 0" />
+	</joint>
+
+	<link name="wall_link">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<box size = "${table_width} ${wall_thick} ${wall_height+table_height}" />
+			</geometry>
+			 <material name="abb_orange">
+          <color rgba="1 0.43 0 1"/>
+        </material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<box size = "${table_width} ${wall_thick} ${wall_height+table_height}" />
+			</geometry>
+		</collision>
+	</link>
+</robot>

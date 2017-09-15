@@ -1,0 +1,1 @@
+cmd_/home/weili/simple_kinova/src/turtle/include/linuxcan/mhydra/mhydra.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/weili/simple_kinova/src/turtle/include/linuxcan/mhydra/mhydra.ko /home/weili/simple_kinova/src/turtle/include/linuxcan/mhydra/mhydra.o /home/weili/simple_kinova/src/turtle/include/linuxcan/mhydra/mhydra.mod.o

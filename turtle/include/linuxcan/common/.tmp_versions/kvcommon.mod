@@ -1,0 +1,2 @@
+/home/weili/simple_kinova/src/turtle/include/linuxcan/common/kvcommon.ko
+/home/weili/simple_kinova/src/turtle/include/linuxcan/common/VCanOsIf.o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/objbuf.o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/osif_functions_kernel.o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/queue.o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/util.o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/softsync.o

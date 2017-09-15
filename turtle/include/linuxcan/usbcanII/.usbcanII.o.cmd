@@ -1,0 +1,1 @@
+cmd_/home/weili/simple_kinova/src/turtle/include/linuxcan/usbcanII/usbcanII.o := ld -m elf_x86_64   -r -o /home/weili/simple_kinova/src/turtle/include/linuxcan/usbcanII/usbcanII.o /home/weili/simple_kinova/src/turtle/include/linuxcan/usbcanII/usbcanHWIf.o 

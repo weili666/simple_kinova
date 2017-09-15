@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot name="table"
+       xmlns:xi="http://www.w3.org/2001/XInclude"
+       xmlns:gazebo="http://playerstage.sourceforge.net/gazebo/xmlschema/#gz"
+       xmlns:model="http://playerstage.sourceforge.net/gazebo/xmlschema/#model"
+       xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+       xmlns:body="http://playerstage.sourceforge.net/gazebo/xmlschema/#body"
+       xmlns:geom="http://playerstage.sourceforge.net/gazebo/xmlschema/#geom"
+       xmlns:joint="http://playerstage.sourceforge.net/gazebo/xmlschema/#joint"
+       xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+       xmlns:rendering="http://playerstage.sourceforge.net/gazebo/xmlschema/#rendering"
+       xmlns:renderable="http://playerstage.sourceforge.net/gazebo/xmlschema/#renderable"
+       xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+       xmlns:physics="http://playerstage.sourceforge.net/gazebo/xmlschema/#physics">
+
+  <property name="table_height" value="0.8" />
+  <property name="table_width" value="1.0" />
+  <property name="table_depth" value="1.0" />
+  <property name="leg_radius" value="0.02" />
+  <property name="table_x" value="0.98" />
+  <property name="table_y" value="0.0" />
+  <property name="table_z" value="0.0" />
+
+  <property name="table_top_thickness" value="0.8"/>
+
+  <property name="M_PI" value="3.1415926535897931" />
+
+    <joint name="world_to_table" type="fixed">
+    <parent link="root"/>
+    <child link="table_top_link" />
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+
+  <!-- tabletop height is .55+.01+.025=.585 -->
+  <link name="table_top_link">
+    <inertial>
+      <mass value="1.0" />
+      <origin xyz="${table_x} ${table_y} ${table_z+table_height-table_top_thickness/2}" />
+      <inertia ixx="1" ixy="0"  ixz="0"
+               iyy="1" iyz="0"
+               izz="1" />
+    </inertial> 
+    <visual>
+      <origin xyz="${table_x} ${table_y} ${table_z+table_height-table_top_thickness/2}" />
+      <geometry>
+        <box size="${table_width} ${table_depth} ${table_top_thickness}" />
+      </geometry>
+              <material name="abb_orange">
+          <color rgba="1 0.43 0 1"/>
+        </material>
+    </visual> 
+    <collision>
+      <origin xyz="${table_x} ${table_y} ${table_z+table_height-table_top_thickness/2}" />
+      <geometry>
+        <box size="${table_width} ${table_depth} ${table_top_thickness}" />
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="table_top_link">
+    <material>Gazebo/LightWood</material>
+    <mu1>50.0</mu1>
+    <mu2>50.0</mu2>
+    <kp>1000000.0</kp>
+    <kd>1.0</kd>
+  </gazebo>
+
+
+</robot>

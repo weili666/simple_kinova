@@ -1,0 +1,1 @@
+cmd_/home/weili/simple_kinova/src/turtle/include/linuxcan/common/kvcommon.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/kvcommon.ko /home/weili/simple_kinova/src/turtle/include/linuxcan/common/kvcommon.o /home/weili/simple_kinova/src/turtle/include/linuxcan/common/kvcommon.mod.o

@@ -1,0 +1,1 @@
+cmd_/home/weili/simple_kinova/src/turtle/include/linuxcan/leaf/leaf.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/weili/simple_kinova/src/turtle/include/linuxcan/leaf/leaf.ko /home/weili/simple_kinova/src/turtle/include/linuxcan/leaf/leaf.o /home/weili/simple_kinova/src/turtle/include/linuxcan/leaf/leaf.mod.o

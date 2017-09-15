@@ -1,0 +1,6 @@
+<launch>
+<node pkg="laser_assembler" type="laser_scan_assembler" name="laser_scan_assembler_node" output="screen" />
+<param name="laser_scan_assembler_node/fixed_frame" type="string" value="world_frame"/>	
+	
+
+</launch>

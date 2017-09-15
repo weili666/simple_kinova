@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: move_group
+    relative_path: urdf/robot1.xacro
+  SRDF:
+    relative_path: config/robot1.srdf
+  CONFIG:
+    author_name: li_wei_666
+    author_email: li_wei_666@163.com
+    generated_timestamp: 1500618837

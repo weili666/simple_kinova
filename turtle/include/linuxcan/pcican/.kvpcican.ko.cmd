@@ -1,0 +1,1 @@
+cmd_/home/weili/simple_kinova/src/turtle/include/linuxcan/pcican/kvpcican.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/weili/simple_kinova/src/turtle/include/linuxcan/pcican/kvpcican.ko /home/weili/simple_kinova/src/turtle/include/linuxcan/pcican/kvpcican.o /home/weili/simple_kinova/src/turtle/include/linuxcan/pcican/kvpcican.mod.o

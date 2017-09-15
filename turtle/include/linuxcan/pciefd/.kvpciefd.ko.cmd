@@ -1,0 +1,1 @@
+cmd_/home/weili/simple_kinova/src/turtle/include/linuxcan/pciefd/kvpciefd.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/weili/simple_kinova/src/turtle/include/linuxcan/pciefd/kvpciefd.ko /home/weili/simple_kinova/src/turtle/include/linuxcan/pciefd/kvpciefd.o /home/weili/simple_kinova/src/turtle/include/linuxcan/pciefd/kvpciefd.mod.o

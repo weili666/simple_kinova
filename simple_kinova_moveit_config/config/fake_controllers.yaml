@@ -1,0 +1,31 @@
+controller_list:
+  - name: fake_combine_grasp_group_controller
+    joints:
+      - world_to_robot_x
+      - world_to_robot_y
+      - world_to_robot_roll
+      - support_to_base
+      - jaco_joint_1
+      - jaco_joint_2
+      - jaco_joint_3
+      - jaco_joint_4
+      - jaco_joint_5
+      - jaco_joint_6
+  - name: fake_arm_chain_group_controller
+    joints:
+      - jaco_joint_1
+      - jaco_joint_2
+      - jaco_joint_3
+      - jaco_joint_4
+      - jaco_joint_5
+      - jaco_joint_6
+  - name: fake_mobile_controller
+    joints:
+      - world_to_robot_x
+      - world_to_robot_y
+      - world_to_robot_roll
+  - name: fake_gripper_controller
+    joints:
+      - jaco_joint_finger_1
+      - jaco_joint_finger_2
+      - jaco_joint_finger_3
